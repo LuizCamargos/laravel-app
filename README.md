@@ -1,6 +1,15 @@
 1 - Alterar o arquivo  .env.example para .env
 
-2 - rodar este comando docker a baixo para atualizar as dependencias do laravel 
+2 - altere as configurações para acesso a base de dados mysql
+   
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=sail
+DB_PASSWORD=password
+
+3 - rodar este comando docker a baixo para atualizar as dependencias do laravel 
 
 docker run --rm \
     -u "$(id -u):$(id -g)" \
@@ -9,10 +18,10 @@ docker run --rm \
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs
 
-3 - Gere a chave da aplicação
+4 - Gere a chave da aplicação
 ./vendor/bin/sail php artisan key:generate    
 	
-4 - Executem este comando para criar seu banco de dados 
+5 - Executem este comando para criar seu banco de dados 
 
 ./vendor/bin/sail php artisan migrate	
 
@@ -46,6 +55,8 @@ alterar listar para mostrar status do atendimento	no botão
     ]);
     return redirect()->route('suporte.listar');
    }
+
+
 
 ************************************************************************************
 
