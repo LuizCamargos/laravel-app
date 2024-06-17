@@ -50,9 +50,7 @@ alterar listar para mostrar status do atendimento	no botão
         'nome' =>$request->nome,
         'email' =>$request->email,
         'atendimento' =>$request->atendimento,
-        'solucao' =>$request->solucao,
-
-    ]);
+        'solucao' =>$request->solucao]);
     return redirect()->route('suporte.listar');
    }
 

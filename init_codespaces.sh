@@ -6,8 +6,7 @@ docker run --rm \
     -w /var/www/html \
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs
-
-./vendor/bin/sail up
+  ./vendor/bin/sail up
 
 ./vendor/bin/sail php artisan key:generate
 ./vendor/bin/sail php artisan migrate:fresh --seed
